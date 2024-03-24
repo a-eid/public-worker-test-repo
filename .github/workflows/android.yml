@@ -31,24 +31,24 @@ jobs:
         with:
           node-version: 18
 
-      # - name: 🏗 Setup Expo and EAS
-      #   uses: expo/expo-github-action@v7
-      #   with:
-      #     token: VpDhwSDHJA667NoWZe6XODGklN4QYcrFax2tR_63
-      #     expo-version: latest
-      #     eas-version: latest
+      - name: 🏗 Setup Expo and EAS
+        uses: expo/expo-github-action@v7
+        with:
+          token: VpDhwSDHJA667NoWZe6XODGklN4QYcrFax2tR_63
+          expo-version: latest
+          eas-version: latest
 
-      # - name: 🏗 Setup EAS local builds
-      #   run: npm add eas-cli-local-build-plugin --global
+      - name: 🏗 Setup EAS local builds
+        run: npm add eas-cli-local-build-plugin --global
 
-      # - name: 📦 Install dependencies
-      #   run: npm install
+      - name: 📦 Install dependencies
+        run: npm install
 
-      # - name: Set up Java
-      #   uses: actions/setup-java@v2
-      #   with:
-      #     java-version: "17"
-      #     distribution: "temurin"
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: "17"
+          distribution: "temurin"
 
-      # - name: 👷 Build app
-      #   run: npm run ci:ios
+      - name: 👷 Build app
+        run: npm run ci:ios
