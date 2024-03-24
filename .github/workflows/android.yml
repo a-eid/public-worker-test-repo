@@ -25,9 +25,9 @@ jobs:
       #     git push --delete origin $TAG_NAME
 
       - name: 🏗 Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 18
           cache: npm
 
       # - name: 🏗 Setup Expo and EAS
