@@ -16,7 +16,7 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           repository: ${{ secrets.REPOSITORY }}
       - name: Log
-        run: ls -la 
+        run: ls -la  && pwd
 
       # - name: Delete Tag After Success
       #   run: |
