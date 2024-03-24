@@ -13,7 +13,7 @@ jobs:
       - name: 🏗 Clone Repo
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           repository: ${{ secrets.REPOSITORY }}
 
       # - name: Delete Tag After Success
