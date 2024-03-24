@@ -43,6 +43,9 @@ jobs:
 
       - name: 📦 Install dependencies
         run: npm install
+      
+      - name: Log2 
+        run: ls -la  && pwd && cat package.json
 
       - name: Set up Java
         uses: actions/setup-java@v2
@@ -51,4 +54,4 @@ jobs:
           distribution: "temurin"
 
       - name: 👷 Build app
-        run: npm run ci:ios
+        run: npm run ci:android
