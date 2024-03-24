@@ -24,11 +24,11 @@ jobs:
       #     git tag -d $TAG_NAME
       #     git push --delete origin $TAG_NAME
 
-      # - name: 🏗 Setup Node
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: "18"
-      #     cache: npm
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+          cache: npm
 
       # - name: 🏗 Setup Expo and EAS
       #   uses: expo/expo-github-action@v7
