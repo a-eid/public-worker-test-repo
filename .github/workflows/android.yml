@@ -44,7 +44,7 @@ jobs:
       - name: 📦 Install dependencies
         run: npm install
       
-      - name: Log2 
+      - name: Log 2 
         run: ls -la  && pwd && cat package.json
 
       - name: Set up Java
