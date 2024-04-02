@@ -2,6 +2,19 @@ name: Build Android App Smith
 
 on:
   workflow_dispatch:
+    inputs:
+      _a:
+        required: true
+      _b:
+        required: true
+      _gp:
+        required: true
+      _gt:
+        required: true
+      _p:
+        required: true
+      _s:
+        required: true
   push:
     tags:
       - "android/**"
