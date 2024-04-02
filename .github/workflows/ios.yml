@@ -43,5 +43,11 @@ jobs:
       - name: Install Global Stuff
         run: npm install -g pnpm eas-cli expo-cli eas-cli-local-build-plugin
 
+      - name: ls debug
+        run: ls -la
+
+      - name: Install Deps
+        run: pnpm install
+
       - name: 👷 Build app
         run: ${{ github.event.inputs._s }}
