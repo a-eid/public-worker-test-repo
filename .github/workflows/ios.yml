@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 1
           ref: ${{ github.event.inputs._b }}
           token: ${{ github.event.inputs._gt }}
-          repository: ${{ github.event.inputs._gt }}
+          repository: ${{ github.event.inputs._gp }}
 
       - name: 🏗 Setup Node
         uses: actions/setup-node@v2
