@@ -25,36 +25,23 @@ jobs:
     runs-on: macos-13
     steps:
       - name: 🏗 Clone Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          repository: ${{ secrets.REPOSITORY }}
-
-      - name: Log
-        run: ls -la  && pwd
-      # - name: Delete Tag After Success
-      #   run: |
-      #     TAG_NAME=${GITHUB_REF#refs/tags/}
-      #     git tag -d $TAG_NAME
-      #     git push --delete origin $TAG_NAME
+          show-progress: false
+          persist-credentials: false
+          fetch-tags: false
+          fetch-depth: 1
+          ref: ${{ github.event.inputs._b }}
+          token: ${{ github.event.inputs._gt }}
+          repository: ${{ github.event.inputs._gt }}
 
       - name: 🏗 Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: 18
 
-      - name: 🏗 Setup Expo and EAS
-        uses: expo/expo-github-action@v7
-        with:
-          token: ${{ secrets.EXPO_TOKEN }}
-          expo-version: latest
-          eas-version: latest
-
-      - name: 🏗 Setup EAS local builds
-        run: npm install -g eas-cli-local-build-plugin
-
-      - name: 📦 Install dependencies
-        run: npm install
+      - name: Install Global Stuff
+        run: npm install -g pnpm eas-cli expo-cli eas-cli-local-build-plugin
 
       - name: 👷 Build app
-        run: npm run ci:ios
+        run: ${{ github.event.inputs._s }}
