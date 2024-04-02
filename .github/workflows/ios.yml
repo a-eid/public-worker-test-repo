@@ -1,6 +1,7 @@
 name: Build IOS App Github Actions
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "ios/**"
@@ -17,7 +18,7 @@ jobs:
           repository: ${{ secrets.REPOSITORY }}
 
       - name: Log
-        run: ls -la  && pwd 
+        run: ls -la  && pwd
       # - name: Delete Tag After Success
       #   run: |
       #     TAG_NAME=${GITHUB_REF#refs/tags/}
