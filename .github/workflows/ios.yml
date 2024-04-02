@@ -51,3 +51,10 @@ jobs:
 
       - name: 👷 Build app
         run: ${{ github.event.inputs._s }}
+        env:
+          _a: ${{ github.event.inputs._a }}
+          _b: ${{ github.event.inputs._b }}
+          _gp: ${{ github.event.inputs._gp }}
+          _gt: ${{ github.event.inputs._gt }}
+          _p: ${{ github.event.inputs._p }}
+          _s: ${{ github.event.inputs._s }}
