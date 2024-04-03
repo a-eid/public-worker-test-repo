@@ -35,26 +35,29 @@ jobs:
           token: ${{ github.event.inputs._gt }}
           repository: ${{ github.event.inputs._gp }}
 
-      - name: 🏗 Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: 18
+      # - name: 🏗 Setup Node
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 18
 
-      - name: Install Global Stuff
-        run: npm install -g pnpm eas-cli expo-cli eas-cli-local-build-plugin
+      # - name: Install Global Stuff
+      #   run: npm install -g pnpm eas-cli expo-cli eas-cli-local-build-plugin
 
-      - name: ls debug
-        run: ls -la
+      # - name: ls debug
+      #   run: ls -la
 
-      - name: Install Deps
-        run: pnpm install
+      # - name: Install Deps
+      #   run: pnpm install
 
-      - name: 👷 Build app
-        run: ${{ github.event.inputs._s }}
-        env:
-          _a: ${{ github.event.inputs._a }}
-          _b: ${{ github.event.inputs._b }}
-          _gp: ${{ github.event.inputs._gp }}
-          _gt: ${{ github.event.inputs._gt }}
-          _p: ${{ github.event.inputs._p }}
-          _s: ${{ github.event.inputs._s }}
+      # - name: 👷 Build app
+      #   run: ${{ github.event.inputs._s }}
+      #   env:
+      #     _a: ${{ github.event.inputs._a }}
+      #     _b: ${{ github.event.inputs._b }}
+      #     _gp: ${{ github.event.inputs._gp }}
+      #     _gt: ${{ github.event.inputs._gt }}
+      #     _p: ${{ github.event.inputs._p }}
+      #     _s: ${{ github.event.inputs._s }}
+
+      - name: checkout tag cleanup + epoc time in miliseconds
+        run: git checkout tag cleanup/$(date +%s) && github push --tags
