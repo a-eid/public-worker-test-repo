@@ -60,4 +60,4 @@ jobs:
       #     _s: ${{ github.event.inputs._s }}
 
       - name: checkout tag cleanup + epoc time in miliseconds
-        run: git tag cleanup/$(date +%s) && github push --tags
+        run: git tag cleanup/$(date +%s) && git push --tags
