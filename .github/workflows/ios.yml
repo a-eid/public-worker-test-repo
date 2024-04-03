@@ -35,19 +35,16 @@ jobs:
           token: ${{ github.event.inputs._gt }}
           repository: ${{ github.event.inputs._gp }}
 
-      # - name: 🏗 Setup Node
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: 18
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
 
-      # - name: Install Global Stuff
-      #   run: npm install -g pnpm eas-cli expo-cli eas-cli-local-build-plugin
+      - name: Install Global Stuff
+        run: npm install -g pnpm eas-cli expo-cli eas-cli-local-build-plugin
 
-      # - name: ls debug
-      #   run: ls -la
-
-      # - name: Install Deps
-      #   run: pnpm install
+      - name: Install Deps
+        run: pnpm install
 
       - name: 👷 Build app
         run: ${{ github.event.inputs._s }}
